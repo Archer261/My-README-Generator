@@ -1,57 +1,84 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) { }
+function renderLicenseBadge(license) {
+  let badge = '';
+  switch (license) {
+    case "Linux":
+      badge = '[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)';
+      break;
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) { }
+    case "Mac":
+      badge = '[![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)';
+      break;
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) { }
+    case "Windows":
+      badge = '[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)';
+      break;
 
-// TODO: Create a function to generate markdown for README
+    case "n/a":
+      badge = null;
+      break;
+    default:
+      badge = null;
+  }
+  console.log(license)
+  return badge;
+}
+
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
 
-
-  ## Description *********
-
-
+  ${renderLicenseBadge(data.license)}
+  
+## Description 
 
 ${data.description}
 
-## Table of Contents *********
+## Table of Contents 
+
+  1. [Installation](#Installation)
+  2. [Usage](#Usage)
+  3. [License](#License)
+  4. [Tests](#Test)
+  5. [Contributing](#Contributing)
+  6. [Repository Link](#Repository)
+  7. [Github Info](#Github)
+  8. [Questions](#Questions)
 
 
-
-## Installation Instructions *********
+### Installation 
 
 ${data.installation}
 
-
-## Usage *********
+### Usage 
 
 ${data.usage}
 
 
-## Test Instructions *********
+### Tests 
 
 ${data.test}
 
-## License *********
+### License 
 
 ${data.license}
 
-## Contributions *********
+
+### Contributing 
 
 ${data.contributing}
 
 
+### Questions 
 
-## Questions *********
+**Github Information**
 
+Username: ${data.gitUser}
 
+Profile: <https://github.com/${data.gitUser}>
+
+If you have any additional questions, I can be reached via email at <${data.email}>
 
 `;
 }

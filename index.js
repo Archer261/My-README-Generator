@@ -42,15 +42,15 @@ const questions = [
         choices: [
             {
                 name: 'Linux',
-                value: '[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)',
             },
             {
                 name: 'Mac',
-                value: '[![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)',
             },
             {
                 name: 'Windows',
-                value: '[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)',
+            },
+            {
+                name: 'n/a',
             }
         ]
     },
@@ -72,6 +72,7 @@ const questions = [
 
 ];
 
+// Prompt user for input
 inquirer.prompt(questions)
     .then((data) => {
         const fileName = 'README.md';

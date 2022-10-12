@@ -83,4 +83,5 @@ If you have any additional questions, I can be reached via email at <${data.emai
 `;
 }
 
+// Export the generateMarkdown function for use in index.js
 module.exports = generateMarkdown;

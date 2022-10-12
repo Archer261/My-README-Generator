@@ -72,15 +72,21 @@ const questions = [
 
 ];
 
-// Prompt user for input
+// Prompt user for input in termial using iquirer node package
 inquirer.prompt(questions)
     .then((data) => {
+
+        //Name of readme file
         const fileName = 'README.md';
+
         fs.writeFile(fileName, generate(data), (err) => {
             if (err)
+
+                //If file was not created, show error
                 console.log(err);
             else {
 
+                // If the file was created, show message
                 console.log("File written successfully\n");
 
             }
